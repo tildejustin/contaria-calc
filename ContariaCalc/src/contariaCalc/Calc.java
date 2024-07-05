@@ -21,6 +21,7 @@ public class Calc {
 				double x1 = Double.parseDouble(firstcoords[0]);
 				double z1 = Double.parseDouble(firstcoords[1]);
 				double a1 = Double.parseDouble(firstcoords[2]);
+				a1 -= 0.1055058 * Math.sin((a1 + 45) * Math.PI / 180.0);
 				double x2;
 				double z2;
 				double a2;
@@ -45,6 +46,7 @@ public class Calc {
 				} else {
 					a2 = Double.parseDouble(secondcoords[2]);
 				}
+				a2 -= 0.1055058 * Math.sin((a2 + 45) * Math.PI / 180.0);
 				
 				double xz[] = TriangulationCalc(x1, z1, a1, x2, z2, a2);
 				
